@@ -99,4 +99,3 @@ async function sendText(text){
     const object = await response.json();
     return object;
 }
-

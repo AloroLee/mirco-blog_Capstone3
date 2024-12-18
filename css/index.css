@@ -1,0 +1,29 @@
+.container-fluid {
+    background-color: black;
+}
+
+.nav-link {
+    color: #ffffff !important; 
+    font-weight: bold;
+}
+
+.nav-link.active {
+    color: #ffffff !important;
+    font-weight: bold; 
+}
+
+.navbar-brand {
+    color: #ffffff !important;
+}
+
+.navbar-brand:hover {
+    color: rgb(62, 62, 69) !important;
+}
+
+.nav-link:hover {
+    color: rgb(62, 62, 69) !important;
+}
+
+.dropdown-item:hover {
+    color: rgb(12, 12, 22) !important;
+}

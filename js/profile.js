@@ -1,31 +1,55 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const profilePicture = document.getElementById("profilePicture");
-    const logoutButton = document.getElementById("logoutButton");
-    const saveProfileButton = document.getElementById("saveProfile");
+    const fileInput = document.getElementById("fileInput");
+    const profileImage = document.getElementById("profileImage");
+    const uploadBtn = document.getElementById("uploadBtn");
+    const saveProfileBtn = document.getElementById("saveProfile");
+    const nameInput = document.getElementById("name");
+    const bioInput = document.getElementById("bio");
+    const emailInput = document.getElementById("email");
+    const responseMessage = document.getElementById("responseMessage");
 
-    // Load profile data from localStorage (if any)
-    const nameField = document.getElementById("name");
-    const bioField = document.getElementById("bio");
-
+    // Load saved profile data
+    const savedProfilePic = localStorage.getItem("profilePic");
     const savedName = localStorage.getItem("profileName");
     const savedBio = localStorage.getItem("profileBio");
+    const savedEmail = localStorage.getItem("profileEmail");
 
-    if (savedName) nameField.value = savedName;
-    if (savedBio) bioField.value = savedBio;
+    if (savedProfilePic) profileImage.src = savedProfilePic;
+    if (savedName) nameInput.value = savedName;
+    if (savedBio) bioInput.value = savedBio;
+    if (savedEmail) emailInput.value = savedEmail;
 
-    // Save profile data to localStorage
-    if (saveProfileButton) {
-        saveProfileButton.addEventListener("click", () => {
-            localStorage.setItem("profileName", nameField.value);
-            localStorage.setItem("profileBio", bioField.value);
-            alert("Profile updated successfully!");
-        });
-    }
+    // Upload Button Trigger
+    uploadBtn.addEventListener("click", () => {
+        fileInput.click();
+    });
 
-    // Logout functionality
-    logoutButton.addEventListener("click", () => {
-        localStorage.removeItem("loggedIn");
-        localStorage.removeItem("token");
-        window.location.href = "login.html";
+    // Handle Profile Picture Upload
+    fileInput.addEventListener("change", (event) => {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                const imageUrl = e.target.result;
+                profileImage.src = imageUrl;
+                localStorage.setItem("profilePic", imageUrl); // Save to LocalStorage
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+
+    // Save Profile Changes
+    saveProfileBtn.addEventListener("click", () => {
+        const name = nameInput.value.trim();
+        const bio = bioInput.value.trim();
+        const email = emailInput.value.trim();
+
+        // Save details to LocalStorage
+        localStorage.setItem("profileName", name);
+        localStorage.setItem("profileBio", bio);
+        localStorage.setItem("profileEmail", email);
+
+        responseMessage.textContent = "Profile saved successfully!";
+        setTimeout(() => responseMessage.textContent = "", 3000);
     });
 });
