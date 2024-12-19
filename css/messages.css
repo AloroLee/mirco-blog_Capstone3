@@ -27,26 +27,25 @@
 .dropdown-item:hover {
     color: rgb(12, 12, 22) !important;
 }
-/* Ensure full-page background for main content only */
+
 body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
 }
 
-/* Background image applied to the main content */
 main {
-    background-image: url('path-to-your-background-image.jpg'); /* Add your background image path */
+    background-image: url(''); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     padding: 20px;
-    min-height: 100vh; /* Ensures it takes the full height of the screen */
+    min-height: 100vh; 
 }
 
-/* Message container styling */
+
 .message {
-    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    background-color: rgba(255, 255, 255, 0.9); 
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 15px;
@@ -57,7 +56,6 @@ main {
     margin-right: auto;
 }
 
-/* Like and Dislike buttons styling */
 button.like,
 button.dislike {
     padding: 5px 10px;
@@ -82,16 +80,14 @@ button.dislike:hover {
     background-color: #bd2130;
 }
 
-/* Likes count */
 .message p span {
     font-weight: bold;
 }
 
-/* Navbar styling */
 .navbar {
-    background-color: #000; /* Keeps navbar clean with a solid background */
+    background-color: #000; 
     color: white;
-    z-index: 10; /* Keeps navbar above the main content */
+    z-index: 10; 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 

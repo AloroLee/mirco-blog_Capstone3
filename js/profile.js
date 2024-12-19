@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const passwordInput = document.getElementById("password")
     const responseMessage = document.getElementById("responseMessage");
 
-    // Load saved profile data
     const savedProfilePic = localStorage.getItem("profilePic");
     const savedName = localStorage.getItem("profileName");
     const savedBio = localStorage.getItem("profileBio");
@@ -22,12 +21,10 @@ document.addEventListener("DOMContentLoaded", () => {
     if (savedEmail) emailInput.value = savedEmail;
     if (savedPassword) passwordInput.value = savedPassword;
 
-    // Upload Button Trigger
     uploadBtn.addEventListener("click", () => {
         fileInput.click();
     });
 
-    // Handle Profile Picture Upload
     fileInput.addEventListener("change", (event) => {
         const file = event.target.files[0];
         if (file) {
@@ -41,14 +38,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Save Profile Changes
     saveProfileBtn.addEventListener("click", () => {
         const name = nameInput.value.trim();
         const bio = bioInput.value.trim();
         const email = emailInput.value.trim();
         const password = passwordInput.value.trim();
 
-        // Save details to LocalStorage
         localStorage.setItem("profileName", name);
         localStorage.setItem("profileBio", bio);
         localStorage.setItem("profileEmail", email);
@@ -56,5 +51,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         responseMessage.textContent = "Profile saved successfully!";
         setTimeout(() => responseMessage.textContent = "", 3000);
+    });
+    const logOutButton = document.getElementById("logout");
+    logOutButton.addEventListener("click", async () => {
+        localStorage.removeItem("token");
+        localStorage.removeItem("username");
+        alert("You have been logged out.");
+        window.location.href = "login.html";
     });
 });

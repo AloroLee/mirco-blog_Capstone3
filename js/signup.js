@@ -1,5 +1,9 @@
 document.addEventListener("DOMContentLoaded", ()=>{
     signUpButton.addEventListener("click",async ()=>{
+        if (!username.value||!fullName.value||!password.value){
+            output.innerText = "fill out all three input"
+            return
+        }
         const result = await signUp(
             username.value,
             fullName.value,

@@ -1,116 +1,140 @@
 .container-fluid {
-    background-color: black;
+  background-color: black;
 }
 
 .nav-link {
-    color: #ffffff !important; 
-    font-weight: bold;
+  color: #ffffff !important;
+  font-weight: bold;
 }
 
 .nav-link.active {
-    color: #ffffff !important;
-    font-weight: bold; 
+  color: #ffffff !important;
+  font-weight: bold;
 }
 
 .navbar-brand {
-    color: #ffffff !important;
+  color: #ffffff !important;
 }
 
 .navbar-brand:hover {
-    color: rgb(62, 62, 69) !important;
+  color: rgb(62, 62, 69) !important;
 }
 
 .nav-link:hover {
-    color: rgb(62, 62, 69) !important;
+  color: rgb(62, 62, 69) !important;
 }
 
 .dropdown-item:hover {
-    color: rgb(12, 12, 22) !important;
+  color: rgb(12, 12, 22) !important;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
 }
-.slideshow-container {
-    max-width: 800px;
-    position: relative;
-    margin: 50px auto;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  }
-  .slides {
-    display: none;
-    text-align: center;
-    padding: 20px;
-    color: #fff;
-    background-color: #0c0b0b;
-  }
-  .slides img {
-    max-width: 100%;
-    border-radius: 10px;
-  }
-  .slides .caption {
-    margin-top: 15px;
-    font-size: 1.2em;
-  }
-  .prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 10px;
-    margin-top: -22px;
-    color: #333;
-    font-weight: bold;
-    font-size: 18px;
-    border-radius: 3px;
-    user-select: none;
-    background: rgba(255, 255, 255, 0.8);
-    display: none;
-  }
-  .prev {
-    left: 10px;
-  }
-  .next {
-    right: 10px;
-  }
-  .dots {
-    text-align: center;
-    margin-top: 15px;
-  }
-  .dots span {
-    cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 5px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-  }
-  .dots .active {
-    background-color: #717171;
-  }
-  #slide-image {
-    width: 800px;
-    height: 400px;
-    object-fit: cover; /* Adjusts how the image fits the dimensions */
-  }
-  .caption{
-    position: absolute; 
-    top: 50%; 
-    left: 50%; 
-    transform: translate(-50%, -50%); 
-    color: white; 
-    background: rgba(0, 0, 0, 0.5); 
-    padding: 10px; 
-    border-radius: 5px; 
-    text-align: center; 
-    font-size: 24px; 
-    font-weight: bold;
-  }
 
- 
+.slideshow-container {
+  max-width: 800px;
+  position: relative;
+  margin: 50px auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.slides {
+  display: none;
+  text-align: center;
+  padding: 20px;
+  color: #fff;
+  background-color: #0c0b0b;
+}
+
+.slides img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.slides .caption {
+  margin-top: 15px;
+  font-size: 1.2em;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 10px;
+  margin-top: -22px;
+  color: #333;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 3px;
+  user-select: none;
+  background: rgba(255, 255, 255, 0.8);
+  display: none;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.dots {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.dots span {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dots .active {
+  background-color: #717171;
+}
+
+#slide-image {
+  width: 800px;
+  height: 400px;
+  object-fit: cover;
+  /* Adjusts how the image fits the dimensions */
+}
+
+.caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+footer {
+  background-color: #060606;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+footer .social a {
+  color: #dccbc4;
+  margin: 0 10px;
+}
