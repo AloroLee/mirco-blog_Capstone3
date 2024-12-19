@@ -10,6 +10,7 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
     <script src="./js/main.js"></script>
+    <script src="./js/slideshow.js"></script>
     <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
@@ -42,5 +43,35 @@
             </div>
         </nav>
     </header>
+    <div class="slideshow-container">
+      <div class="slides" style="display: block;">
+        <a href="./index.html">
+        <img src="./img/yankee-doodle-pigeon-carrier-pigeon.jpg" alt="Slide 1" id="slide-image">
+        <div class="caption">
+          Welcome To Aproko</div>
+      </div>
+      <div class="slides" style="display: none;">
+        <a href="./messages.html">
+        <img src="./img/stayconnect.jpg" alt="Slide 2" id="slide-image">
+        <div class="caption">
+          Stay Connected</div>
+      </div>
+      <div class="slides" style="display: none;">
+        <a href="./new.html">
+        <img src="./img/talking-bird-species-7.jpg" alt="Slide 3" id="slide-image">
+        <div class="caption">
+          Share Your Thoughts
+        </div>
+      </div>
+      
+      <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+      <a class="next" onclick="changeSlide(1)">&#10095;</a>
+    </div>
+    
+    <div class="dots">
+      <span onclick="currentSlide(1)"></span>
+      <span onclick="currentSlide(2)"></span>
+      <span onclick="currentSlide(3)"></span>
+    </div>
 </body>
 </html>

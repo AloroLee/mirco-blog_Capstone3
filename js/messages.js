@@ -1,66 +1,65 @@
-function getMessage(m) {
-  return `
-      <div data-post_id="${m._id}" class="message">
-          <div class="message-header">
-              <strong>FROM:</strong> ${m.username} <span class="message-date">${new Date(m.createdAt).toLocaleString()}</span>
-          </div>
-          <div class="message-text">
-              <strong>TEXT:</strong> ${m.text}
-          </div>
-          <div class="message-footer">
-              <strong>LIKES:</strong> <span id="likes-${m._id}">${m.likes.length}</span>
-          </div>
-          <div class="message-buttons">
-              <button class="like-button btn btn-success" data-post_id="${m._id}">Like</button>
-              <button class="dislike-button btn btn-danger" data-post_id="${m._id}">Dislike</button>
-          </div>
-      </div>
-  `;
-}
-
 document.addEventListener("DOMContentLoaded", async () => {
-  const messages = await getMessageList();
-  const output = document.getElementById("output");
-  output.innerHTML = messages.map(getMessage).join("<hr>\n");
+    // Redirect if not logged in
+    if (!localStorage.token) {
+        window.location.href = "login.html";
+        return;
+    }
 
-  // Add event listeners for Like and Dislike buttons
-  document.querySelectorAll(".like-button").forEach(button => {
-      button.addEventListener("click", async (event) => {
-          const postId = event.target.dataset.post_id;
-          await likePost(postId);
-      });
-  });
+    const messages = await getMessageList();
+    const output = document.getElementById("output");
 
-  document.querySelectorAll(".dislike-button").forEach(button => {
-      button.addEventListener("click", async (event) => {
-          const postId = event.target.dataset.post_id;
-          await dislikePost(postId);
-      });
-  });
+    if (messages.length === 0) {
+        output.innerHTML = "<p>No messages available.</p>";
+        return;
+    }
+
+    output.innerHTML = messages.map(getMessage).join("");
+
+    // Initialize like/dislike functionality
+    initializeLikeButtons();
 });
 
-// Function to "like" a post
-async function likePost(postId) {
-  try {
-      // Send a request to like the post (endpoint not provided)
-      console.log(`Liking post with ID: ${postId}`);
-      // Placeholder: Update the like count in the UI
-      const likeCountElement = document.getElementById(`likes-${postId}`);
-      likeCountElement.textContent = parseInt(likeCountElement.textContent) + 1;
-  } catch (error) {
-      console.error("Error liking post:", error);
-  }
+// Render message
+function getMessage(m) {
+    const likes = JSON.parse(localStorage.getItem("likes")) || {};
+    const likeCount = likes[m._id] || m.likes.length;
+
+    return `
+        <div class="message" data-post_id="${m._id}">
+            <p><strong>${m.username}</strong> - ${new Date(m.createdAt).toLocaleString()}</p>
+            <p>${m.text}</p>
+            <p>Likes: <span id="likes-${m._id}">${likeCount}</span></p>
+            <button class="like" data-post_id="${m._id}">Like</button>
+            <button class="dislike" data-post_id="${m._id}">Dislike</button>
+        </div>
+    `;
 }
 
-// Function to "dislike" a post
-async function dislikePost(postId) {
-  try {
-      // Send a request to dislike the post (endpoint not provided)
-      console.log(`Disliking post with ID: ${postId}`);
-      // Placeholder: Update the like count in the UI (simulate decrease)
-      const likeCountElement = document.getElementById(`likes-${postId}`);
-      likeCountElement.textContent = Math.max(0, parseInt(likeCountElement.textContent) - 1);
-  } catch (error) {
-      console.error("Error disliking post:", error);
-  }
+// Initialize like buttons
+function initializeLikeButtons() {
+    document.querySelectorAll(".like").forEach((button) => {
+        button.addEventListener("click", () => {
+            const postId = button.dataset.post_id;
+            updateLike(postId, 1);
+        });
+    });
+
+    document.querySelectorAll(".dislike").forEach((button) => {
+        button.addEventListener("click", () => {
+            const postId = button.dataset.post_id;
+            updateLike(postId, -1);
+        });
+    });
+}
+
+// Update likes
+function updateLike(postId, delta) {
+    const likes = JSON.parse(localStorage.getItem("likes")) || {};
+    const currentLikes = likes[postId] || 0;
+
+    const newLikes = Math.max(0, currentLikes + delta);
+    likes[postId] = newLikes;
+
+    localStorage.setItem("likes", JSON.stringify(likes));
+    document.getElementById(`likes-${postId}`).textContent = newLikes;
 }
