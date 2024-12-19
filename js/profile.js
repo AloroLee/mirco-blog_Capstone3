@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const nameInput = document.getElementById("name");
     const bioInput = document.getElementById("bio");
     const emailInput = document.getElementById("email");
+    const passwordInput = document.getElementById("password")
     const responseMessage = document.getElementById("responseMessage");
 
     // Load saved profile data
@@ -13,11 +14,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const savedName = localStorage.getItem("profileName");
     const savedBio = localStorage.getItem("profileBio");
     const savedEmail = localStorage.getItem("profileEmail");
+    const savedPassword = localStorage.getItem("profilePassword")
 
     if (savedProfilePic) profileImage.src = savedProfilePic;
     if (savedName) nameInput.value = savedName;
     if (savedBio) bioInput.value = savedBio;
     if (savedEmail) emailInput.value = savedEmail;
+    if (savedPassword) passwordInput.value = savedPassword;
 
     // Upload Button Trigger
     uploadBtn.addEventListener("click", () => {
@@ -43,11 +46,13 @@ document.addEventListener("DOMContentLoaded", () => {
         const name = nameInput.value.trim();
         const bio = bioInput.value.trim();
         const email = emailInput.value.trim();
+        const password = passwordInput.value.trim();
 
         // Save details to LocalStorage
         localStorage.setItem("profileName", name);
         localStorage.setItem("profileBio", bio);
         localStorage.setItem("profileEmail", email);
+        localStorage.setItem("profilePassword", password);
 
         responseMessage.textContent = "Profile saved successfully!";
         setTimeout(() => responseMessage.textContent = "", 3000);
