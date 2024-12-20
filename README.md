@@ -35,13 +35,13 @@ This repository contains the implementation of a micro-blogging platform, design
 4. Edit your profile, manage your messages, and explore other features.
 
 ## Screen Shots 
-![HomePage](images/homepage-screenshot.png "Homepage Screenshot")
-![LoginPage](images/homepage-screenshot.png "LoginPage Screenshot")
-![SignupPage](images/homepage-screenshot.png "SignupPage Screenshot")
-![MessagesPage](images/homepage-screenshot.png "MessagesPage Screenshot")
-![ProfilePage](images/homepage-screenshot.png "ProfilePage Screenshot")
-![NewPage](images/homepage-screenshot.png "NewPage Screenshot")
-![ForgetpasswordPage](images/homepage-screenshot.png "ForgetpasswordPage Screenshot")
+![HomePage](/img/readpic1.png "Homepage Screenshot")
+![LoginPage](img/loginpic.png "LoginPage Screenshot")
+![SignupPage](img/signup.png "SignupPage Screenshot")
+![MessagesPage](img/ReadpicMessage2.png "MessagesPage Screenshot")
+![ProfilePage](img/profile.png "ProfilePage Screenshot")
+![NewPage](img/newpic.png "NewPage Screenshot")
+![ForgetpasswordPage](img/forget.png "ForgetpasswordPage Screenshot")
 
 
 
