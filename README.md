@@ -43,5 +43,9 @@ This repository contains the implementation of a micro-blogging platform, design
 ![NewPage](img/newpic.png "NewPage Screenshot")
 ![ForgetpasswordPage](img/forget.png "ForgetpasswordPage Screenshot")
 
+## HTML Valid shot
+![validhtml](img/valid.png "validhtml Screenshot")
+
+
 
 

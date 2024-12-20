@@ -110,7 +110,16 @@ body {
   width: 800px;
   height: 400px;
   object-fit: cover;
-  /* Adjusts how the image fits the dimensions */
+}
+#slide-imag {
+  width: 800px;
+  height: 400px;
+  object-fit: cover;
+}
+#slide-ima {
+  width: 800px;
+  height: 400px;
+  object-fit: cover;
 }
 
 .caption {
