@@ -91,3 +91,43 @@ button.dislike:hover {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.message {
+    display: flex;
+    flex-direction: column; 
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    background-color: #fff;
+}
+
+.likes-container {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start; 
+    gap: 5px; 
+}
+
+.like-buttons {
+    display: flex;
+    gap: 10px; 
+}
+
+.like,
+.dislike {
+    font-size: 18px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+.like {
+    background-color: #007bff;
+    color: white;
+}
+
+.dislike {
+    background-color: #dc3545;
+    color: white;
+}

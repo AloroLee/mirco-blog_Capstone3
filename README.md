@@ -1,4 +1,4 @@
-# Micro Blog Capstone 3
+# Aproko Micro Blog
 
 ## Overview
 This repository contains the implementation of a micro-blogging platform, designed as part of Capstone Project 3. The platform allows users to interact with features such as user authentication, profile management, and blogging functionalities.
@@ -15,7 +15,7 @@ This repository contains the implementation of a micro-blogging platform, design
 - **CSS3**: For styling and layout.
 - **JavaScript**: For interactivity and dynamic content.
 - **Bootstrap**: For responsive design and pre-styled components.
-- **Font Awesome**: For icons.
+- **Microbloglite**: Provides the endpoint (URLs) for performing operation such fetching messages, liking posts and creating users. 
 
 ## File Structure
 - `index.html`: Home page.
